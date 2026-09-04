@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Shop — Your Business, Online in One Scan</title>
+<meta name="description" content="A simple digital shop for small businesses. Customers scan a QR, browse products and place orders directly on WhatsApp.">
+<style>
+:root{--navy:#071426;--navy2:#0d1f38;--blue:#1d5fa7;--gold:#d7a83d;--gold2:#f1d27a;--white:#f8fafc;--muted:#aab7c8;--green:#25d366;--card:#10243f;--line:rgba(255,255,255,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#06111f,#0a192c 45%,#06111f);color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif}a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(5,16,29,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.navin{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.02em}.brand span{color:var(--gold2)}.navlinks{display:flex;gap:24px;color:#c7d2e0;font-size:14px}.navlinks a:hover{color:#fff}
+.hero{padding:74px 0 60px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-160px;top:-170px;background:radial-gradient(circle,rgba(29,95,167,.32),transparent 68%)}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(215,168,61,.35);color:var(--gold2);padding:8px 13px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.hero h1{font-size:clamp(40px,6vw,70px);line-height:1.02;margin:20px 0 18px;letter-spacing:-.045em}.hero h1 em{font-style:normal;color:var(--gold2)}.hero p{font-size:18px;line-height:1.65;color:#c2cfdd;max-width:650px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:13px 20px;border-radius:10px;font-weight:800;font-size:14px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px}.btn.primary{background:linear-gradient(135deg,#e4bd57,#b9851f);color:#101820;border:0}.btn.secondary{background:rgba(255,255,255,.04)}.hero-card{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.35)}.phone{background:#f6f8fb;border-radius:22px;padding:12px;color:#122238;max-width:370px;margin:auto;box-shadow:0 18px 45px rgba(0,0,0,.3)}.phone-top{height:22px;width:80px;border-radius:20px;background:#16253a;margin:0 auto 12px}.mini-shop{border-radius:16px;background:#fff;overflow:hidden}.mini-head{background:linear-gradient(135deg,#0d2a4c,#1b5f9e);color:white;padding:22px}.mini-head b{font-size:22px}.mini-head small{display:block;opacity:.8;margin-top:5px}.mini-search{margin:14px;background:#eef3f8;border-radius:10px;padding:10px;color:#718096;font-size:12px}.mini-products{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px 14px}.mini-product{border:1px solid #e4e9ef;border-radius:12px;padding:10px}.mini-pic{height:72px;border-radius:9px;background:linear-gradient(135deg,#ead7b0,#7e5734)}.mini-product:nth-child(2) .mini-pic{background:linear-gradient(135deg,#f3b6b6,#6b2131)}.mini-product:nth-child(3) .mini-pic{background:linear-gradient(135deg,#f2d99c,#c77c45)}.mini-product:nth-child(4) .mini-pic{background:linear-gradient(135deg,#b9d7ec,#48769d)}.mini-product b{display:block;font-size:11px;margin-top:7px}.mini-product span{font-size:10px;color:#667}.mini-wa{margin:0 14px 14px;background:#25d366;color:#052415;border-radius:10px;padding:11px;text-align:center;font-size:12px;font-weight:800}
+.section{padding:72px 0}.section-head{text-align:center;max-width:760px;margin:0 auto 34px}.kicker{color:var(--gold2);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.13em}.section h2{font-size:clamp(30px,4vw,45px);margin:10px 0}.section-head p{color:var(--muted);line-height:1.6}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step,.feature{background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:18px;padding:22px}.step-no{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(215,168,61,.14);color:var(--gold2);font-weight:900}.step h3{margin:15px 0 7px;font-size:18px}.step p{color:var(--muted);font-size:13px;line-height:1.55;margin:0}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.shop{background:linear-gradient(160deg,#102744,#0b1c31);border:1px solid var(--line);border-radius:20px;padding:20px;position:relative;overflow:hidden;transition:.25s}.shop:hover{transform:translateY(-4px);border-color:rgba(215,168,61,.5);box-shadow:0 18px 40px rgba(0,0,0,.22)}.shop.demo-1{background:linear-gradient(160deg,#1d160b,#0e0d0a)}.shop-icon{height:145px;border-radius:15px;display:grid;place-items:center;font-size:54px;margin-bottom:17px;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.14),transparent 45%),linear-gradient(135deg,#183b61,#0a1627)}.demo-1 .shop-icon{background:radial-gradient(circle at 50% 35%,rgba(215,168,61,.25),transparent 45%),linear-gradient(135deg,#20180d,#090909)}.shop h3{margin:0 0 7px;font-size:21px}.shop p{margin:0 0 16px;color:var(--muted);font-size:13px;line-height:1.5}.shop-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}.tag{font-size:10px;border:1px solid var(--line);color:#c7d2e0;padding:5px 8px;border-radius:999px}.demo-btn{width:100%;border:0;background:#fff;color:#102238;border-radius:10px;padding:11px;font-weight:800;cursor:pointer}.demo-btn.gold{background:linear-gradient(135deg,#e4bd57,#b9851f);color:#101820}
+.pitch{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px;align-items:stretch}.pitch-card{background:linear-gradient(145deg,#0e2948,#09182a);border:1px solid var(--line);border-radius:22px;padding:30px}.pitch-card h3{font-size:28px;margin:0 0 12px}.pitch-card p,.pitch-card li{color:#bdc9d7;line-height:1.6}.pitch-card ul{padding-left:20px}.price-line{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}.price-line:last-child{border:0}.price-line b{color:var(--gold2)}
+
+.pricing-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.price-card-main{position:relative;background:linear-gradient(160deg,#122a48,#0a1a2e);border:1px solid rgba(215,168,61,.4);border-radius:24px;padding:38px;overflow:hidden}
+.price-card-main:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-140px;top:-140px;background:radial-gradient(circle,rgba(215,168,61,.18),transparent 65%)}
+.price-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(215,168,61,.4);color:var(--gold2);padding:7px 14px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;position:relative}
+.price-amount{font-size:clamp(44px,6vw,64px);font-weight:900;letter-spacing:-.03em;margin:18px 0 4px;color:#fff;position:relative}
+.price-amount span{font-size:16px;color:var(--muted);font-weight:600;letter-spacing:0}
+.price-sub{color:var(--muted);font-size:14px;margin-bottom:26px;position:relative}
+.price-includes{list-style:none;margin:0 0 30px;padding:0;position:relative;display:flex;flex-direction:column;gap:13px}
+.price-includes li{display:flex;gap:12px;align-items:flex-start;color:#dbe4ee;font-size:14.5px;line-height:1.5}
+.price-includes li b{color:var(--gold2)}
+.check-ico{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(215,168,61,.16);color:var(--gold2);display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:1px}
+.pricing-side{display:flex;flex-direction:column;gap:20px}
+.qr-showcase{background:linear-gradient(160deg,#102744,#0b1c31);border:1px solid var(--line);border-radius:22px;padding:26px;text-align:center}
+.qr-showcase img{width:150px;height:150px;border-radius:12px;background:#fff;padding:10px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.qr-showcase .qr-caption{margin-top:14px;color:var(--muted);font-size:13px;line-height:1.5}
+.qr-showcase .qr-caption b{color:var(--gold2);display:block;font-size:15px;margin-bottom:3px}
+.addon-card{flex:1;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:26px}
+.addon-title{font-weight:800;font-size:15.5px;margin-bottom:10px}
+.addon-price{font-size:26px;font-weight:900;color:var(--gold2);margin-bottom:10px}
+.addon-price span{font-size:12.5px;color:var(--muted);font-weight:600}
+.addon-card p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+.free-tag{display:inline-block;background:rgba(37,211,102,.14);color:#7ee6ac;border:1px solid rgba(37,211,102,.35);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
+.cta{padding:70px 0}.cta-box{border:1px solid rgba(215,168,61,.35);border-radius:25px;padding:44px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(215,168,61,.13),transparent 55%),linear-gradient(145deg,#102742,#091727)}.cta h2{font-size:40px;margin:0 0 12px}.cta p{color:var(--muted);max-width:650px;margin:0 auto 23px;line-height:1.6}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#8391a3;font-size:12px;text-align:center}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);padding:20px}.modal.open{display:flex;align-items:center;justify-content:center}.modal-box{width:min(1050px,100%);height:min(88vh,780px);background:#fff;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 30px 100px rgba(0,0,0,.6)}.modal-close{position:absolute;right:12px;top:10px;z-index:5;border:0;background:#111;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer}.modal iframe{width:100%;height:100%;border:0}
+.demo-modal .modal-box{background:#08182b;color:#fff;padding:28px;overflow:auto}.demo-modal h2{margin:0 0 6px}.demo-modal .sub{color:#9eafc2;margin:0 0 22px}.demo-items{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.demo-item{background:#102742;border:1px solid var(--line);border-radius:14px;padding:16px}.demo-item .art{height:110px;border-radius:10px;background:linear-gradient(135deg,#6b321c,#e3a35e);margin-bottom:10px}.demo-item:nth-child(2) .art{background:linear-gradient(135deg,#5c1420,#f0a0ad)}.demo-item:nth-child(3) .art{background:linear-gradient(135deg,#ead6a4,#b46e39)}.demo-item:nth-child(4) .art{background:linear-gradient(135deg,#9bd2ee,#327ca5)}.demo-item:nth-child(5) .art{background:linear-gradient(135deg,#d9b5c9,#6c375d)}.demo-item:nth-child(6) .art{background:linear-gradient(135deg,#a7d59c,#377a45)}.demo-item b{display:block}.demo-item small{display:block;color:#9eafc2;margin:4px 0 12px}.demo-order{background:#25d366;color:#062214;border:0;border-radius:9px;padding:9px 12px;font-weight:800;cursor:pointer;width:100%}
+@media(max-width:900px){.hero-grid,.pitch{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.shop-grid{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+@media(max-width:620px){.hero{padding-top:48px}.steps,.shop-grid,.demo-items{grid-template-columns:1fr}.hero p{font-size:16px}.cta-box{padding:30px 18px}.cta h2{font-size:30px}.navin{height:60px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container navin"><div class="brand">DIGITAL <span>SHOP</span></div><div class="navlinks"><a href="#how">How It Works</a><a href="#samples">Live Samples</a><a href="#pricing">Pricing</a><a href="#benefits">Why Digital Shop</a><a href="#contact">Get Started</a></div></div></nav>
+
+<header class="hero"><div class="container hero-grid">
+<div>
+<div class="eyebrow">Built for local & small businesses</div>
+<h1>Your Shop.<br><em>Online in One Scan.</em></h1>
+<p>Give your customers a simple digital shop they can open by scanning a QR code — browse products, select what they want and send the order directly to your WhatsApp.</p>
+<div class="hero-actions"><a class="btn primary" href="#samples">Explore Live Samples →</a><a class="btn secondary" href="#contact">See How It Works</a></div>
+</div>
+<div class="hero-card"><div class="phone"><div class="phone-top"></div><div class="mini-shop"><div class="mini-head"><b>Your Digital Shop</b><small>Open • Browse • Order</small></div><div class="mini-search">🔎 Search products...</div><div class="mini-products"><div class="mini-product"><div class="mini-pic"></div><b>Signature Product</b><span>₹499</span></div><div class="mini-product"><div class="mini-pic"></div><b>Best Seller</b><span>₹699</span></div><div class="mini-product"><div class="mini-pic"></div><b>Premium Choice</b><span>₹899</span></div><div class="mini-product"><div class="mini-pic"></div><b>New Arrival</b><span>₹599</span></div></div><div class="mini-wa">💬 ORDER ON WHATSAPP</div></div></div></div>
+</div></header>
+
+<section class="section" id="how"><div class="container"><div class="section-head"><div class="kicker">Simple for you. Simple for your customer.</div><h2>From QR Scan to WhatsApp Order</h2><p>No complicated app. No marketplace. Just a clean digital storefront made for your business.</p></div>
+<div class="steps">
+<div class="step"><div class="step-no">1</div><h3>Scan QR</h3><p>Customer scans the QR displayed at your shop, counter, visiting card, poster or packaging.</p></div>
+<div class="step"><div class="step-no">2</div><h3>Open Your Shop</h3><p>Your branded digital shop opens instantly on the customer's phone.</p></div>
+<div class="step"><div class="step-no">3</div><h3>Browse & Select</h3><p>Customer checks categories, products, prices, sizes or variants and adds what they need.</p></div>
+<div class="step"><div class="step-no">4</div><h3>Order on WhatsApp</h3><p>One tap sends the selected order details to your WhatsApp for confirmation and fulfilment.</p></div>
+</div></div></section>
+
+<section class="section" id="samples"><div class="container"><div class="section-head"><div class="kicker">See it before you buy it</div><h2>Live Digital Shop Samples</h2><p>Different businesses. Same simple idea — a professional online presence without the cost and complexity of a full e-commerce website.</p></div>
+<div class="shop-grid">
+<div class="shop demo-1"><div class="shop-icon">🧴</div><h3>IZYAN Attar & Perfumes</h3><p>Premium fragrance catalogue with sizes, pricing, filters, cart and WhatsApp ordering.</p><div class="shop-tags"><span class="tag">Product Catalogue</span><span class="tag">Cart</span><span class="tag">WhatsApp</span></div><a class="demo-btn gold" href="https://vahab0597-dev.github.io/Izyan-Attar-Perfume/" target="_blank">Open IZYAN Shop →</a></div>
+<div class="shop"><div class="shop-icon">🍫</div><h3>ChocoCraft</h3><p>Chocolate shop for gift boxes, custom orders, flavours and festival hampers.</p><div class="shop-tags"><span class="tag">Chocolate</span><span class="tag">Gift Packs</span><span class="tag">Order on WhatsApp</span></div><button class="demo-btn" onclick="openDemo('ChocoCraft','Choose chocolates, gift boxes and custom packs.')">View Sample →</button></div>
+<div class="shop"><div class="shop-icon">🥐</div><h3>Oven & Crust Bakery</h3><p>Fresh cakes, pastries, breads and celebration orders — all in one mobile catalogue.</p><div class="shop-tags"><span class="tag">Cakes</span><span class="tag">Bakery</span><span class="tag">Pre-Order</span></div><button class="demo-btn" onclick="openDemo('Oven & Crust Bakery','Browse cakes, pastries and fresh bakery favourites.')">View Sample →</button></div>
+<div class="shop"><div class="shop-icon">🛒</div><h3>Fresh Basket</h3><p>A neighbourhood grocery catalogue where customers can quickly select daily essentials.</p><div class="shop-tags"><span class="tag">Grocery</span><span class="tag">Daily Needs</span><span class="tag">WhatsApp</span></div><button class="demo-btn" onclick="openDemo('Fresh Basket','Select your daily essentials and send the list to the shop.')">View Sample →</button></div>
+<div class="shop"><div class="shop-icon">👗</div><h3>Noor Boutique</h3><p>Showcase suits, dresses, hijabs and new arrivals with a simple enquiry/order flow.</p><div class="shop-tags"><span class="tag">Fashion</span><span class="tag">New Arrivals</span><span class="tag">Enquiry</span></div><button class="demo-btn" onclick="openDemo('Noor Boutique','Browse collections and send your selected items to WhatsApp.')">View Sample →</button></div>
+<div class="shop"><div class="shop-icon">🎁</div><h3>Gift & Stationery</h3><p>Cards, gifts, school supplies and personalised items — easy to browse from a phone.</p><div class="shop-tags"><span class="tag">Gifts</span><span class="tag">Stationery</span><span class="tag">Custom Orders</span></div><button class="demo-btn" onclick="openDemo('Gift & Stationery','Pick gifts, stationery and personalised products.')">View Sample →</button></div>
+<div class="shop"><div class="shop-icon">🍱</div><h3>Home Kitchen</h3><p>Home-made meals, snacks and tiffin plans with menu browsing and WhatsApp ordering.</p><div class="shop-tags"><span class="tag">Food</span><span class="tag">Tiffin</span><span class="tag">Daily Menu</span></div><button class="demo-btn" onclick="openDemo('Home Kitchen','View today’s menu and send your order directly on WhatsApp.')">View Sample →</button></div>
+</div></div></section>
+
+<section class="section" id="pricing"><div class="container"><div class="section-head"><div class="kicker">Simple, transparent pricing</div><h2>Everything You Get, One Price</h2><p>No hidden costs, no confusing tiers — just a complete, ready-to-share digital shop.</p></div>
+<div class="pricing-grid">
+<div class="price-card-main">
+<div class="price-badge">✦ Complete Digital Shop Package</div>
+<div class="price-amount">₹4,599</div>
+<div class="price-sub">One-time setup — your shop goes live and stays yours</div>
+<ul class="price-includes">
+<li><span class="check-ico">✓</span><span>A fully <b>branded digital shop</b> built around your products, categories and pricing</span></li>
+<li><span class="check-ico">✓</span><span>Your own <b>dedicated QR code</b> — display it at your counter, packaging or visiting card</span></li>
+<li><span class="check-ico">✓</span><span>One-tap <b>WhatsApp ordering</b> built directly into your shop</span></li>
+<li><span class="check-ico">✓</span><span>Fully <b>mobile-optimised</b> — opens instantly on any customer's phone</span></li>
+<li><span class="check-ico">✓</span><span>First <b>10 product photos</b> professionally background-enhanced and uploaded<span class="free-tag">FREE</span></span></li>
+</ul>
+<a class="btn primary" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20get%20started%20with%20my%20Digital%20Shop%20(%E2%82%B94%2C599%20package).">💬 Get Started — ₹4,599</a>
+</div>
+<div class="pricing-side">
+<div class="qr-showcase">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdYAAAHWCAIAAABFeD8NAAAKq0lEQVR4nO3du5EkyRUF0e21IaAAZID+4kAGKACull0qbICYN/4y+xy+699uwVyLr8/n8wcAhT/rFwDwfUkwQEaCATISDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCRYIDMj7mH/sc//zX34In//uffQ498/qzOz/vEz3nnO7p5VTe/jbn3O/c57/wG58z97zsFA2QkGCAjwQAZCQbISDBARoIBMhIMkJFggIwEA2QG13Fnc2uTGzernrn11I0nLvp2brp2/mLPdr6jnZ9ktehzCgbISDBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbIZOu4s+o2rblHdpvWfjvXYnO/nJ3buSf+799wCgbISDBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbILF3HPVG1Ypr727PqVrqzm1f1vud9312I7+MUDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCxjvtNblZM1fJqztw7uvkkdy7N5t4vGzgFA2QkGCAjwQAZCQbISDBARoIBMhIMkJFggIwEA2SWruOeuOp54v5t7nmrb3DuW7h5R9XfnlW/nOqRd3IKBshIMEBGggEyEgyQkWCAjAQDZCQYICPBABkJBshk67idd5rdmLsfbG5bVS3cdi7rzqrvd+ff3njf//4Np2CAjAQDZCQYICPBABkJBshIMEBGggEyEgyQkWCAzOA6bufG6YnetyWb+9sbO7dkO++d2/m8T+QUDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJBZendctUQ6m9v83Lzfue1ctfh64hrwrPoWqtv/zub+u5/4u3IKBshIMEBGggEyEgyQkWCAjAQDZCQYICPBABkJBsh8fT6foYe2rfpVdu6jzqpvoVpd7rxZ7om/nDk7y+AUDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJDJ7o7beTvcE2+0q+zcod1snL7b9+tGuw2cggEyEgyQkWCAjAQDZCQYICPBABkJBshIMEBGggEy2Tpu545l57Zq7pHnbtOq3u8T7xWce94n3mhX/W3FKRggI8EAGQkGyEgwQEaCATISDJCRYICMBANkJBggM7iO27mtmnvesycuoKyYfo/3LQmf+H9UcQoGyEgwQEaCATISDJCRYICMBANkJBggI8EAGQkGyHx9Pp/6NfxW1e1hO7dGN+ZWiE9cQFV7zrOdt8PtfN7qV+cUDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATISDJAZXMdVN2LNPfITV1tnO+/42vnLufHE3/MTN5nWcQD8DyQYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZLJ1XLVSe+Je6Imvas7OLdmcavG183l33ll3wykYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZCQYIPOjeuK5HUu1rqmWV09cIu1cmj1xhXh+VTv3fmc7X9Ucp2CAjAQDZCQYICPBABkJBshIMEBGggEyEgyQkWCATLaOqzY/O/dR71upVZu9m0e+Mfeq5n4b7/tf2PnbOHMKBshIMEBGggEyEgyQkWCAjAQDZCQYICPBABkJBshk67izuc3P2fv2QnOf1dnOW/jmvsGdG8Wddv6nVJyCATISDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATJfn89n6KGfuFSZU91MdbbzVrpqWTdnbu9344k36d08784iOQUDZCQYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZAbvjptbquxcT92sa9636dq5BjyrvoWdm6737Vd3fs5OwQAZCQbISDBARoIBMhIMkJFggIwEA2QkGCAjwQCZwbvj5swt66pF0Pv2fju3ZDePfPa+39WN932Sc5yCATISDJCRYICMBANkJBggI8EAGQkGyEgwQEaCATKD67gnbti+2zJn5yrvxs773852flZnVoi/ilMwQEaCATISDJCRYICMBANkJBggI8EAGQkGyEgwQOZH/QJ2qXZ3c27e0c79241qD7bz259bmu385VSLvjOnYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCRYIDM0rvj3vfIN3Zuq3Z6342FZzvvyqv+Q892/p6dggEyEgyQkWCAjAQDZCQYICPBABkJBshIMEBGggEyS++Om7un67yQeeICaqdqabbzs9p5z97Nwq26SW/nrXQ3nIIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBARoIBMoN3x51Vd3zt3M/Mveb33aR3tnN59cSb1io7P6u5X7tTMEBGggEyEgyQkWCAjAQDZCQYICPBABkJBshIMEAmW8fd2Lmsq1Z5O9dEN574qqpt1RN/zzv3q9Xa0ykYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZCQYIPPIddyc6pa2G1ZqP88tfH+3c1m382/nOAUDZCQYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZAbXcTuXZjuXOU+0czt3tvM72nnr4Jz3vaMbTsEAGQkGyEgwQEaCATISDJCRYICMBANkJBggI8EAmaXruLOda6K5NeATF33VvnHO+z6r6ja86g63nd+RUzBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBA5kf9Av4fT1zXzD1y9WlUd8c9caN49r71Y7Vg3Ll/O3MKBshIMEBGggEyEgyQkWCAjAQDZCQYICPBABkJBsg8ch238+64s2rDdlatmCo7b2m7eVVzf3t+RzuXojs3e2dOwQAZCQbISDBARoIBMhIMkJFggIwEA2QkGCAjwQCZr8/nU7+Gl3C32M8/cmXnp/G+X86NJ77mG07BABkJBshIMEBGggEyEgyQkWCAjAQDZCQYICPBAJnBu+N23tR0Y+4GsBs3n3O1Fqt+G9VNazeq7dyNnXu/6pHPnIIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBARoIBMoPruLOd9zhVS7OzJ97wtvOmtfctNndu5+Z+V0985DOnYICMBANkJBggI8EAGQkGyEgwQEaCATISDJCRYIBMto47m1sxPXGVt/POup0btifu3+Y+ybPv9jnv3Ps5BQNkJBggI8EAGQkGyEgwQEaCATISDJCRYICMBANklq7j3mduTTS3Q5u7727ub5+4Javeb7WrrH6xO5exTsEAGQkGyEgwQEaCATISDJCRYICMBANkJBggI8EAGeu4X6ZaXs3t0Hbe4FfdSje3raruYdu5q6y+3zN3xwG8kAQDZCQYICPBABkJBshIMEBGggEyEgyQkWCAzNJ13M5bns7shX7e3Gd19t2+hSfeDVgtGKuNolMwQEaCATISDJCRYICMBANkJBggI8EAGQkGyEgwQCZbx1VblDlPvGvr5pFvnnfnZ1XZuQa8Ua0fb1SvyikYICPBABkJBshIMEBGggEyEgyQkWCAjAQDZCQYIPP1+Xzq1wDwTTkFA2QkGCAjwQAZCQbISDBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBARoIBMhIMkJFggIwEA2QkGCAjwQAZCQbISDBA5i+LPMEDRzx51AAAAABJRU5ErkJggg==" alt="Sample QR Code">
+<div class="qr-caption"><b>This could be your shop's QR</b>One scan opens your digital shop — customers browse and order straight to your WhatsApp.</div>
+</div>
+<div class="addon-card">
+<div class="addon-title">📸 Have More Than 10 Products?</div>
+<div class="addon-price">₹500 <span>/ every additional 10 photos</span></div>
+<p>Your first 10 product photos are professionally enhanced and uploaded at no extra cost. Beyond that, every additional batch of 10 photos is edited and added for just ₹500 — so your whole catalogue always looks premium.</p>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="section" id="benefits"><div class="container"><div class="section-head"><div class="kicker">The pitch</div><h2>Why a Digital Shop?</h2><p>For businesses that want to go online but do not want the cost and complexity of a full website or marketplace.</p></div>
+<div class="pitch"><div class="pitch-card"><h3>Made for the business next door.</h3><p>A digital shop gives a local business a professional online presence while keeping the buying conversation simple.</p><ul><li>Customers can see your products anytime.</li><li>Works directly from a mobile browser.</li><li>QR code can be displayed inside the shop.</li><li>Orders can come straight to WhatsApp.</li><li>Products, prices and categories can be updated.</li><li>No separate customer app is required.</li></ul></div>
+<div class="pitch-card"><h3>What the customer experiences</h3><div class="price-line"><span>Scan the QR at the counter</span><b>01</b></div><div class="price-line"><span>Open the business catalogue</span><b>02</b></div><div class="price-line"><span>Select products / quantities</span><b>03</b></div><div class="price-line"><span>Send order to WhatsApp</span><b>04</b></div><div class="price-line"><span>Business confirms the order</span><b>05</b></div><p style="margin-top:20px">The goal is simple: <strong style="color:#f1d27a">turn a walk-in customer into a repeat digital customer.</strong></p></div></div>
+</div></section>
+
+<section class="cta" id="contact"><div class="container"><div class="cta-box"><div class="kicker">Ready to show your customers?</div><h2>Let Your Business Go Digital.</h2><p>Get a branded digital shop designed around your products, categories, pricing and WhatsApp ordering flow.</p><a class="btn primary" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Digital%20Shop." target="_blank">💬 Enquire on WhatsApp</a></div></div></section>
+
+<footer>Digital Shop Concept • QR → Digital Store → Product Selection → WhatsApp Order</footer>
+
+<div class="modal" id="izyanModal"><div class="modal-box"><button class="modal-close" onclick="closeModal('izyanModal')">×</button><iframe src="https://vahab0597-dev.github.io/Izyan-Attar-Perfume/" title="IZYAN Digital Shop"></iframe></div></div>
+<div class="modal demo-modal" id="demoModal"><div class="modal-box"><button class="modal-close" onclick="closeModal('demoModal')">×</button><h2 id="demoTitle"></h2><p class="sub" id="demoSub"></p><div class="demo-items" id="demoItems"></div></div></div>
+<script>
+const wa=''; 
+const demoProducts=['Signature Chocolate Box','Premium Celebration Cake','Daily Essentials Pack','Classic Gift Hamper','Fresh Special Combo','Customer Favourite'];
+function openDemo(name,sub){
+ document.getElementById('demoTitle').textContent=name;
+ document.getElementById('demoSub').textContent=sub;
+ document.getElementById('demoItems').innerHTML=demoProducts.map((x,i)=>`<div class="demo-item"><div class="art"></div><b>${x}</b><small>Starting from ₹${[299,499,399,599,249,699][i]}</small><button class="demo-order" onclick="demoOrder('${name}','${x}')">💬 Order on WhatsApp</button></div>`).join('');
+ document.getElementById('demoModal').classList.add('open');
+}
+function demoOrder(shop,product){
+ const msg=encodeURIComponent(`Hi, I found ${shop} Digital Shop. I would like to order/enquire about: ${product}.`);
+ window.open(`https://wa.me/?text=${msg}`,'_blank');
+}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+</script>
+</body></html>
